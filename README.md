@@ -1,10 +1,10 @@
-# REPOSITORIES
+#### REPOSITORIES
 Materiais de estudo em Python
 ###### RASPAR TODO O SITE #### CODIGO COMPLETO 
 
-# -*- coding: utf-8 -*-
+### -*- coding: utf-8 -*-
 
-# 3/outubro/2018
+### 3/outubro/2018
 
 
 import requests  
@@ -39,11 +39,11 @@ data_inicio = datetime.date(2018,5,25)
 filename = "cni_empauta"+str(data_inicio)+".csv"
 
 f = open(filename,"w", encoding='utf-8')
-#f = open(filename,"w", encoding='iso-8859-1')
+###f = open(filename,"w", encoding='iso-8859-1')
 
 headers = "ENTIDADE;NUM_NOTICIA;DATA;HORA;VEÍCULO;SEÇÃO;ESTADO;TITULO;LINK\n"
 f.write(headers)
-# 269 DIAS DO ANO
+#### 269 DIAS DO ANO
 for i in range(1, 70):
     delta = datetime.timedelta(days=i)
     data = data_inicio + delta
