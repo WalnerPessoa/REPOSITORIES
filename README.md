@@ -1,10 +1,6 @@
-#### REPOSITORIES
-Materiais de estudo em Python
-###### RASPAR TODO O SITE #### CODIGO COMPLETO 
 
 ### -*- coding: utf-8 -*-
 
-### 3/outubro/2018
 
 
 import requests  
@@ -16,9 +12,6 @@ from datetime import datetime as dt
 
 localtime = time.localtime(time.time())
 
-
-
-
 from time import sleep
 #sleep(0.1) # Time in seconds.
 
@@ -26,11 +19,9 @@ from time import sleep
 indice_entidade=0
 indice_noticia=0
 
-##############
 session_requests = requests.Session()
 referer_url = "http://cni.empauta.com/e2/" 
 
-#######  PROBLEMA NA DATA ===>   date(2018,5,20)
 
 data_inicio = datetime.date(2018,5,25)
 
@@ -39,18 +30,15 @@ data_inicio = datetime.date(2018,5,25)
 filename = "cni_empauta"+str(data_inicio)+".csv"
 
 f = open(filename,"w", encoding='utf-8')
-###f = open(filename,"w", encoding='iso-8859-1')
 
 headers = "ENTIDADE;NUM_NOTICIA;DATA;HORA;VEÍCULO;SEÇÃO;ESTADO;TITULO;LINK\n"
 f.write(headers)
-#### 269 DIAS DO ANO
 for i in range(1, 70):
     delta = datetime.timedelta(days=i)
     data = data_inicio + delta
     nova_data  = dt.strftime(data, '%Y%m%d')
     print (nova_data)
     url = "http://cni.empauta.com/e2/?setdata="+nova_data
-    #########
     headers_cni={"referer":"http://cni.empauta.com/e2/",  "cookie":"SESSIP=192.168.109.246; PHPSESSID=vs6sipdc5k6ct7auparbtph008; _eus=6690; __utmc=7507693; __utmz=7507693.1535492475.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); SESSIP=192.168.109.247; cod_cookie=60872943; cod_cookie_17=60872943; __utma=7507693.273240049.1535492475.1538660901.1538672459.57"}
     
     sleep(150)
